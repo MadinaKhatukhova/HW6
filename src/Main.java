@@ -1,31 +1,29 @@
 public class Main {
     public static void main(String[] args) {
 
-        int monthNumber = 12;
-        switch (monthNumber) {
-            case 12:
-            case 1:
-            case 2:
-                System.out.println("Зимний месяц.\n");
-                break;
-            case 3:
-            case 4:
-            case 5:
-                System.out.println("Весенний месяц.\n");
-                break;
-            case 6:
-            case 7:
-            case 8:
-                System.out.println("Летний месяц.\n");
-                break;
-            case 9:
-            case 10:
-            case 11:
-                System.out.println("Осенний месяц.\n");
-                break;
-            default:
-                System.out.println("Такого месяца не существует.\n");
+        int age = 25;
+        int standartAge = 23;
+        int salary = 30_000;
+        int standardSalary = 50_000;
+        int moreStandartSalary = 80_000;
+        int limitYoung = salary * 2;
+        int limitAdult = salary * 3;
+        float creditLimit;
+        System.out.print("Мы готовы выдать Вам кредитную карту с лимитом ");
+        if (age >= standartAge && salary >= moreStandartSalary) {
+            creditLimit = limitAdult * 1.5f;
+        } else if (age >= standartAge && salary >= standardSalary) {
+            creditLimit = limitAdult * 1.2f;
+        } else if (age >= standartAge && salary < standardSalary) {
+            creditLimit = limitAdult;
+        } else if (age < standartAge && salary >= moreStandartSalary) {
+            creditLimit = limitYoung * 1.5f;
+        } else if (age < standartAge && salary >= standardSalary) {
+            creditLimit = limitYoung * 1.2f;
+        } else {
+            creditLimit = limitYoung;
         }
-    } }
+        System.out.println(creditLimit + " рублей.");
+    }}
 
 
