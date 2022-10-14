@@ -1,19 +1,31 @@
 public class Main {
     public static void main(String[] args) {
 
-        int deliveryDistance = 100;
-        int deliveryDays = 1;
-        int distanceAddDays = 40; // Шаг расстояния, при котором увеличивается доставка на СУТКИ
-        int remainingDistance = deliveryDistance - 20; // Если разница <= 0, то выведем СУТКИ на доставку, если больше, то ИНАЧЕ
-        System.out.print("Потребуется дней: ");
-        if (remainingDistance <= 0) {
-            System.out.println(deliveryDays);
-        } else if (remainingDistance % distanceAddDays != 0) {
-            System.out.println((deliveryDays += remainingDistance / distanceAddDays + 1));
-        } else {
-            System.out.println((deliveryDays += remainingDistance / distanceAddDays));
+        int monthNumber = 12;
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("Зимний месяц.\n");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весенний месяц.\n");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Летний месяц.\n");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осенний месяц.\n");
+                break;
+            default:
+                System.out.println("Такого месяца не существует.\n");
         }
-    }}
-
+    } }
 
 
